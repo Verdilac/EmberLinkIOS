@@ -11,6 +11,8 @@ class EventDetailsViewController: UIViewController {
     
     
     var item: EventItem?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var EventOrganizerName: UILabel!
     
@@ -34,8 +36,140 @@ class EventDetailsViewController: UIViewController {
         displayItemDetails()
     }
     
-
     
+    
+    
+    @IBAction func EditAction(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title:"Edit Event",
+                                      message: "",preferredStyle: .alert)
+        
+        alert.addTextField{TextField in TextField.placeholder = self.item?.eventOrganizer}
+        alert.addTextField{TextField in TextField.placeholder = self.item?.eventName}
+        alert.addTextField{TextField in TextField.placeholder = self.item?.participantsLimit}
+        alert.addTextField{TextField in TextField.placeholder = self.item?.eventTime}
+        alert.addTextField{TextField in TextField.placeholder = self.item?.eventVenue}
+        alert.addTextField{TextField in TextField.placeholder = self.item?.eventDescription}
+        alert.addTextField{TextField in TextField.placeholder = self.item?.eventTag}
+        
+        alert.addAction(UIAlertAction(title: "Save", style: .cancel,handler: { [weak self] _ in
+            guard let field1 = alert.textFields?[0],let field2 = alert.textFields?[1],
+                  let field3 = alert.textFields?[2], let field4 = alert.textFields?[3],
+                  let field5 = alert.textFields?[4],let field6 = alert.textFields?[5],let field7 = alert.textFields?[6],
+                  let newOrganizerNametxt = field1.text, let newEventNametxt = field2.text,
+                  let newParticipantLimit = field3.text,
+                  let newEventTime = field4.text, let newEventVenue = field5.text, let newEventDescription = field6.text, let newEventTag = field7.text , !newEventNametxt.isEmpty else{
+                return
+                
+            }
+            
+            if let eventItem = self?.item {
+                self?.EditCheck(event: eventItem, newEventOrganizer: newOrganizerNametxt, newEventName: newEventNametxt, newParticipantsLimit: newParticipantLimit, newEventTime: newEventTime, newEventVenue: newEventVenue, newEventDescription: newEventDescription, newEventTag: newEventTag)
+            } else {
+                print("Error deleting event: possible event nill")
+
+            }
+            
+            
+        }))
+            
+        
+        
+        self.present(alert,animated: true)
+           
+    }
+    
+    
+    
+    
+    
+
+    @IBAction func DeleteAction(_ sender: UIButton) {
+        
+        if let eventToDelete = item {
+               deleteEvent(event: eventToDelete)
+           }
+        
+        navigationController?.popViewController(animated: true)
+        
+        
+    }
+    
+    
+    
+    func deleteEvent(event:EventItem){
+        context.delete(event)
+        do{
+            try context.save()
+        }
+        catch{
+            print("Error deleting event: \(error.localizedDescription)")
+        }
+    }
+    
+    
+    
+    func EditCheck(event:EventItem,newEventOrganizer:String,newEventName:String ,newParticipantsLimit:String,newEventTime:String,newEventVenue:String,newEventDescription:String,newEventTag:String){
+        
+        if !newEventOrganizer.isEmpty {
+                event.eventOrganizer = newEventOrganizer
+            }
+
+            if !newEventName.isEmpty {
+                event.eventName = newEventName
+            }
+
+            if !newParticipantsLimit.isEmpty {
+                event.participantsLimit = newParticipantsLimit
+            }
+
+            if !newEventTime.isEmpty {
+                event.eventTime = newEventTime
+            }
+
+            if !newEventVenue.isEmpty {
+                event.eventVenue = newEventVenue
+            }
+
+            if !newEventDescription.isEmpty {
+                event.eventDescription = newEventDescription
+            }
+
+            if !newEventTag.isEmpty {
+                event.eventTag = newEventTag
+            }
+
+            // Save the changes to the context if needed
+            do {
+                try context.save()
+                // Handle successful update
+            } catch {
+                // Handle the error
+            }
+    }
+    
+    
+    
+    func updateItem(event:EventItem,newEventOrganizer:String,newEventName:String ,newParticipantsLimit:String,newEventTime:String,newEventVenue:String,newEventDescription:String,newEventTag:String){
+        
+        
+        event.eventOrganizer = newEventOrganizer
+        event.eventName = newEventName
+        event.participantsLimit = newParticipantsLimit
+        event.eventTime = newEventTime
+        event.eventDescription = newEventDescription
+        event.eventVenue = newEventVenue
+        event.eventTag = newEventTag
+        
+        do{
+            try context.save()
+            
+        }
+        catch{
+            
+        }
+        
+    }
     func displayItemDetails() {
             // Check if item is not nil and update UI with its attributes
             if let selectedItem = item {

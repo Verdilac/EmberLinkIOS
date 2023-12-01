@@ -80,7 +80,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text  = "\(model.eventName) - \(model.eventTag))"
+
+        if let eventName = model.eventName, let eventTag = model.eventTag, let eventOrganizer = model.eventOrganizer {
+            cell.textLabel?.text = "\(eventName) - #\(eventTag) by \(eventOrganizer)"
+        } else {
+            // Handle the case where either eventName or eventTag is nil
+            cell.textLabel?.text = "Unavailable"
+        }
         return cell
     }
     
@@ -95,6 +101,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               navigationController?.pushViewController(detailsViewController, animated: true)
           }
       }
+    
+    
+   
       
     
     
@@ -121,6 +130,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add , target: self, action: #selector(didTapAdd))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            getAllEvents()
+        }
     
     func getAllEvents(){
         
@@ -243,6 +257,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             do{
                 try context.save()
+                
             }
             catch{
                 
