@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count * 7
+        return models.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,27 +18,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        let modelIndex = indexPath.row / 7 // Index of the current EventItem
-           let attributeIndex = indexPath.row % 7 // Index of the current attribute
-
-           let model = models[modelIndex]
-           
-           var attributes: [(name: String, value: String?)] = [
-               ("Event Name", model.eventName),
-               ("eventOrganizer", model.eventOrganizer),
-               ("EventParticipantLimit ", model.participantsLimit),
-               ("EventTime", model.eventTime),
-               ("EventVenue", model.eventVenue),
-               ("EventDescription", model.eventDescription),
-               ("EventTag", model.eventTag)
-           ]
-           
-           let attribute = attributes[attributeIndex]
-           
-           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-           cell.textLabel?.text = "\(attribute.name): \(attribute.value ?? "")"
-           
-           return cell
+//        let modelIndex = indexPath.row / 7 // Index of the current EventItem
+//           let attributeIndex = indexPath.row % 7 // Index of the current attribute
+//
+//           let model = models[modelIndex]
+//
+//           var attributes: [(name: String, value: String?)] = [
+//               ("Event Name", model.eventName),
+//               ("eventOrganizer", model.eventOrganizer),
+//               ("EventParticipantLimit ", model.participantsLimit),
+//               ("EventTime", model.eventTime),
+//               ("EventVenue", model.eventVenue),
+//               ("EventDescription", model.eventDescription),
+//               ("EventTag", model.eventTag)
+//           ]
+//
+//           let attribute = attributes[attributeIndex]
+//
+//           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//           cell.textLabel?.text = "\(attribute.name): \(attribute.value ?? "")"
+//
+//           return cell
         
 //        let modelIndex = indexPath.row / 7 // Index of the current EventItem
 //            let attributeIndex = indexPath.row % 7 // Index of the current attribute
@@ -78,13 +78,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-//        let model = models[indexPath.row]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
-//        cell.textLabel?.text  = "\(model.eventName) - \(model.eventTag))"
-//        cell2.textLabel?.text  = "\(model.eventTime) - \(model.eventVenue))"
-//        return cell
+        let model = models[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text  = "\(model.eventName) - \(model.eventTag))"
+        return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          let selectedItem = models[indexPath.row] // Retrieve the selected item based on the index path
+          
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          
+          if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "event_details_vc") as? EventDetailsViewController {
+              detailsViewController.item = selectedItem // Pass the selected item to EventDetailsViewController
+              navigationController?.pushViewController(detailsViewController, animated: true)
+          }
+      }
+      
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
