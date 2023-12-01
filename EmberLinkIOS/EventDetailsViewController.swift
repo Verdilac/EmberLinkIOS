@@ -31,6 +31,12 @@ class EventDetailsViewController: UIViewController {
     
     @IBOutlet weak var EventTag: UILabel!
     
+    
+    @IBOutlet weak var Participants: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayItemDetails()
@@ -58,9 +64,9 @@ class EventDetailsViewController: UIViewController {
                   let field5 = alert.textFields?[4],let field6 = alert.textFields?[5],let field7 = alert.textFields?[6],
                   let newOrganizerNametxt = field1.text, let newEventNametxt = field2.text,
                   let newParticipantLimit = field3.text,
-                  let newEventTime = field4.text, let newEventVenue = field5.text, let newEventDescription = field6.text, let newEventTag = field7.text , !newEventNametxt.isEmpty else{
-                return
+                  let newEventTime = field4.text, let newEventVenue = field5.text, let newEventDescription = field6.text, let newEventTag = field7.text  else{
                 
+                return
             }
             
             if let eventItem = self?.item {
@@ -94,6 +100,68 @@ class EventDetailsViewController: UIViewController {
         
         
     }
+    
+    
+    
+    @IBAction func JoinAction(_ sender: UIButton) {
+        
+        
+        let participantLimitString = item?.participantsLimit ?? "" // Assuming this is a String
+        if let participantLimitInt = Int32(participantLimitString) {
+            if(item!.currentParticipantCount  < participantLimitInt){
+                
+                let alert = UIAlertController(title:"Join Event",
+                                              message: "",preferredStyle: .alert)
+                
+               
+                alert.addTextField{TextField in TextField.placeholder = "Enter Your name"}
+                
+                alert.addAction(UIAlertAction(title: "Save", style: .cancel,handler: { [weak self] _ in
+                    guard let field1 = alert.textFields?[0],
+                           let newParticipantName = field1.text  else{
+                        
+                        return
+                    }
+                    
+                    
+                    
+                    
+                    if let eventItem = self?.item {
+                        self?.AddParticipant(event: eventItem, name: newParticipantName)
+                    } else {
+                        print("Error Adding participant to  event")
+
+                    }
+                    
+                    
+                }))
+                    
+                
+                
+                self.present(alert,animated: true)
+            }
+            else{
+                let alert = UIAlertController(title:"Event Full!!",
+                                              message: "",preferredStyle: .alert)
+                self.present(alert,animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    alert.dismiss(animated: true, completion: nil)
+                }
+                
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
     
     
     
@@ -170,16 +238,40 @@ class EventDetailsViewController: UIViewController {
         }
         
     }
+    
+    func AddParticipant (event:EventItem,name:String){
+            if (event.participants == "") {
+                event.participants = name
+            }
+            else{
+                
+                event.participants = (event.participants ?? "") + ", " + name
+            }
+            do{
+                try context.save()
+                
+            }
+            catch{
+                
+            }
+            
+    }
+    
+    
+    
+    
+    
     func displayItemDetails() {
             // Check if item is not nil and update UI with its attributes
             if let selectedItem = item {
-                EventOrganizerName.text = selectedItem.eventOrganizer
-                EventName.text = selectedItem.eventName
-                ParticipantLimit.text = selectedItem.participantsLimit
-                EventTime.text = selectedItem.eventTime
-                EventVenue.text = selectedItem.eventVenue
-                EventDescription.text = selectedItem.eventDescription
-                EventTag.text = selectedItem.eventTag
+                EventOrganizerName.text = "Organizer: " + (selectedItem.eventOrganizer ?? "")
+                EventName.text = "EventName: " + (selectedItem.eventName ??  "")
+                ParticipantLimit.text = "Participant Limit: " + (selectedItem.participantsLimit ??  "")
+                EventTime.text = "Time: " + (selectedItem.eventTime ??  "")
+                EventVenue.text = "Venue: " + (selectedItem.eventVenue ??  "")
+                EventDescription.text = "Description: " + (selectedItem.eventDescription ??  "")
+                EventTag.text = "Tag: " + (selectedItem.eventTag ??  "")
+                Participants.text = "Participants: " + (selectedItem.participants ??  "")
                 
             }
         }

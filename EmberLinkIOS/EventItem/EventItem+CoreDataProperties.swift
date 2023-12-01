@@ -23,6 +23,9 @@ extension EventItem {
     @NSManaged public var eventVenue: String?
     @NSManaged public var eventDescription: String?
     @NSManaged public var eventTag: String?
+    @NSManaged public var participants: String?
+    @NSManaged public var currentParticipantCount: Int32
+    
 
 }
 

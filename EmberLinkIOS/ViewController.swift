@@ -163,6 +163,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         newEvent.eventVenue = eventVenue
         newEvent.eventDescription = eventDescription
         newEvent.eventTag = eventTag
+        newEvent.participants = orgnizerName
+        newEvent.currentParticipantCount = 0
+        
         
         do{
             try context.save()
