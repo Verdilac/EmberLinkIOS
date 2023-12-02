@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482A1BC92B195BAA00C2F631 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */; };
 		486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD1772B18211000650FF8 /* AppDelegate.swift */; };
 		486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD1792B18211000650FF8 /* SceneDelegate.swift */; };
 		486BD17C2B18211000650FF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD17B2B18211000650FF8 /* ViewController.swift */; };
@@ -14,9 +15,12 @@
 		486BD1822B18211000650FF8 /* EmberLinkIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 486BD1802B18211000650FF8 /* EmberLinkIOS.xcdatamodeld */; };
 		486BD1842B18211100650FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486BD1832B18211100650FF8 /* Assets.xcassets */; };
 		486BD1872B18211100650FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486BD1852B18211100650FF8 /* LaunchScreen.storyboard */; };
+		486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */; };
+		486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		486BD1742B18211000650FF8 /* EmberLinkIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmberLinkIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		486BD1772B18211000650FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486BD1792B18211000650FF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		486BD1832B18211100650FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		486BD1862B18211100650FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486BD1882B18211100650FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		486BD1762B18211000650FF8 /* EmberLinkIOS */ = {
 			isa = PBXGroup;
 			children = (
+				486BD1922B18E61200650FF8 /* EventItem */,
 				486BD1772B18211000650FF8 /* AppDelegate.swift */,
 				486BD1792B18211000650FF8 /* SceneDelegate.swift */,
 				486BD17B2B18211000650FF8 /* ViewController.swift */,
@@ -66,8 +73,18 @@
 				486BD1852B18211100650FF8 /* LaunchScreen.storyboard */,
 				486BD1882B18211100650FF8 /* Info.plist */,
 				486BD1802B18211000650FF8 /* EmberLinkIOS.xcdatamodeld */,
+				482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */,
 			);
 			path = EmberLinkIOS;
+			sourceTree = "<group>";
+		};
+		486BD1922B18E61200650FF8 /* EventItem */ = {
+			isa = PBXGroup;
+			children = (
+				486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */,
+				486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */,
+			);
+			path = EventItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +159,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				486BD17C2B18211000650FF8 /* ViewController.swift in Sources */,
+				482A1BC92B195BAA00C2F631 /* EventDetailsViewController.swift in Sources */,
+				486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */,
 				486BD1822B18211000650FF8 /* EmberLinkIOS.xcdatamodeld in Sources */,
+				486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */,
 				486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */,
 				486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */,
 			);
