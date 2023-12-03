@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  CreateEventViewController.swift
 //  EmberLinkIOS
 //
-//  Created by Lathindu Pahasara on 2023-11-29.
+//  Created by Loise Study on 2023-12-02.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class CreateEventViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,5 +25,5 @@ class ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }

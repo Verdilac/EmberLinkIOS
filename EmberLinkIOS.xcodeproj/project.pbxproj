@@ -10,13 +10,15 @@
 		482A1BC92B195BAA00C2F631 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */; };
 		486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD1772B18211000650FF8 /* AppDelegate.swift */; };
 		486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD1792B18211000650FF8 /* SceneDelegate.swift */; };
-		486BD17C2B18211000650FF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD17B2B18211000650FF8 /* ViewController.swift */; };
 		486BD17F2B18211000650FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486BD17D2B18211000650FF8 /* Main.storyboard */; };
 		486BD1822B18211000650FF8 /* EmberLinkIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 486BD1802B18211000650FF8 /* EmberLinkIOS.xcdatamodeld */; };
 		486BD1842B18211100650FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486BD1832B18211100650FF8 /* Assets.xcassets */; };
 		486BD1872B18211100650FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486BD1852B18211100650FF8 /* LaunchScreen.storyboard */; };
 		486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */; };
 		486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */; };
+		E3245AC22B1C0C2D0017C8F3 /* EventListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3245AC12B1C0C2D0017C8F3 /* EventListingTableViewController.swift */; };
+		E3245AC42B1C0D190017C8F3 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3245AC32B1C0D190017C8F3 /* CreateEventViewController.swift */; };
+		E3245ACA2B1C1C780017C8F3 /* EventListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3245AC92B1C1C780017C8F3 /* EventListingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,6 @@
 		486BD1742B18211000650FF8 /* EmberLinkIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmberLinkIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		486BD1772B18211000650FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486BD1792B18211000650FF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		486BD17B2B18211000650FF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		486BD17E2B18211000650FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		486BD1812B18211000650FF8 /* EmberLinkIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmberLinkIOS.xcdatamodel; sourceTree = "<group>"; };
 		486BD1832B18211100650FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +33,9 @@
 		486BD1882B18211100650FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E3245AC12B1C0C2D0017C8F3 /* EventListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingTableViewController.swift; sourceTree = "<group>"; };
+		E3245AC32B1C0D190017C8F3 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		E3245AC92B1C1C780017C8F3 /* EventListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +71,15 @@
 				486BD1922B18E61200650FF8 /* EventItem */,
 				486BD1772B18211000650FF8 /* AppDelegate.swift */,
 				486BD1792B18211000650FF8 /* SceneDelegate.swift */,
-				486BD17B2B18211000650FF8 /* ViewController.swift */,
 				486BD17D2B18211000650FF8 /* Main.storyboard */,
 				486BD1832B18211100650FF8 /* Assets.xcassets */,
 				486BD1852B18211100650FF8 /* LaunchScreen.storyboard */,
 				486BD1882B18211100650FF8 /* Info.plist */,
 				486BD1802B18211000650FF8 /* EmberLinkIOS.xcdatamodeld */,
 				482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */,
+				E3245AC12B1C0C2D0017C8F3 /* EventListingTableViewController.swift */,
+				E3245AC32B1C0D190017C8F3 /* CreateEventViewController.swift */,
+				E3245AC92B1C1C780017C8F3 /* EventListingTableViewCell.swift */,
 			);
 			path = EmberLinkIOS;
 			sourceTree = "<group>";
@@ -115,7 +121,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					486BD1732B18211000650FF8 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -158,13 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486BD17C2B18211000650FF8 /* ViewController.swift in Sources */,
 				482A1BC92B195BAA00C2F631 /* EventDetailsViewController.swift in Sources */,
 				486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */,
+				E3245AC22B1C0C2D0017C8F3 /* EventListingTableViewController.swift in Sources */,
 				486BD1822B18211000650FF8 /* EmberLinkIOS.xcdatamodeld in Sources */,
 				486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */,
+				E3245ACA2B1C1C780017C8F3 /* EventListingTableViewCell.swift in Sources */,
 				486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */,
 				486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */,
+				E3245AC42B1C0D190017C8F3 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +234,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -286,6 +295,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
