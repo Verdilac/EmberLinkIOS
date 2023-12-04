@@ -32,13 +32,14 @@ class CreateEventViewController: UIViewController {
     
 
     @IBAction func submitButton(_ sender: UIButton) {
-        var didCreateEvent = eventModel.createEvent(
+        let didCreateEvent = eventModel.createEvent(
             context: context,
             organizerName: eventOrganizer.text ?? "",
             eventName: eventName.text ?? "",
             participantsLimit: participantsLimit.text ?? "",
             eventTime: eventTime.date,
-            eventVenue: eventVenueLatitude.text ?? "",
+            eventVenueLongitude: eventVenueLongitude.text ?? "",
+            eventVenueLatitude: eventVenueLatitude.text ?? "",
             eventDescription: eventDescription.text ?? "",
             eventTag: eventTag.text ?? ""
         );

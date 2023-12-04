@@ -7,7 +7,8 @@
         <attribute name="eventOrganizer" optional="YES" attributeType="String"/>
         <attribute name="eventTag" optional="YES" attributeType="String"/>
         <attribute name="eventTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="eventVenue" optional="YES" attributeType="String"/>
+        <attribute name="eventVenueLatitude" optional="YES" attributeType="String"/>
+        <attribute name="eventVenueLongitude" optional="YES" attributeType="String"/>
         <attribute name="participants" optional="YES" attributeType="String"/>
         <attribute name="participantsLimit" optional="YES" attributeType="String"/>
     </entity>

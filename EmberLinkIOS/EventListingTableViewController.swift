@@ -9,17 +9,20 @@ import UIKit
 import CoreData
 
 class EventListingTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getAllEvents()
+        //tableView.delegate = self
+        //tableView.dataSource = self
+        //tableView.frame = view.bounds
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    getAllEvents()
+    }
+    
     // MARK: - Table view data source
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var eventModel = EventModel();
@@ -28,24 +31,25 @@ class EventListingTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return eventModel.models.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "event_listing_tablecell", for: indexPath) as! EventListingTableViewCell
+        let model = eventModel.models[indexPath.row]
         
-        cell.eventNameLabel.text = "Event some event name"
-        cell.eventOrganizerLabel.text = "Loise"
-
+        cell.eventNameLabel.text = model.eventName;
+        cell.eventOrganizerLabel.text = model.eventOrganizer;
+        
         return cell
     }
     
     
     public func getAllEvents() {
-        var success = eventModel.getAllEvents(context: context);
+        let success = eventModel.getAllEvents(context: context);
         
         if(success) {
             DispatchQueue.main.async {
@@ -101,23 +105,7 @@ class EventListingTableViewController: UITableViewController {
 }
 
 
-/* func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
- return models.count
- }
- 
- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- let model = models[indexPath.row]
- let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
- 
- if let eventName = model.eventName, let eventTag = model.eventTag, let eventOrganizer = model.eventOrganizer {
- cell.textLabel?.text = "\(eventName) - #\(eventTag) by \(eventOrganizer)"
- } else {
- // Handle the case where either eventName or eventTag is nil
- cell.textLabel?.text = "Unavailable"
- }
- return cell
- }
- 
+/*
  
  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  let selectedItem = models[indexPath.row] // Retrieve the selected item based on the index path
@@ -129,10 +117,6 @@ class EventListingTableViewController: UITableViewController {
  navigationController?.pushViewController(detailsViewController, animated: true)
  }
  }
- 
- 
- 
- 
  
  
  let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -179,65 +163,7 @@ class EventListingTableViewController: UITableViewController {
  
  
  }
- 
- 
- 
- 
- @objc private func didTapAdd()
- {
- let alert = UIAlertController(title:"New Event",
- message: "Enter New Event",preferredStyle: .alert)
- 
- 
- alert.addTextField { textField in
- textField.placeholder = "organizer Name"
- 
- alert.addTextField { textField in
- textField.placeholder = "eventName"
- }
- alert.addTextField { textField in
- textField.placeholder = "participantLimit"
- }
- alert.addTextField { textField in
- textField.placeholder = "eventTime"
- }
- alert.addTextField { textField in
- textField.placeholder = "eventVenue"
- }
- alert.addTextField { textField in
- textField.placeholder = "EventDescription"
- }
- alert.addTextField { textField in
- textField.placeholder = "EventTag"
- }
- 
- alert.addAction(UIAlertAction(title: "Submit", style: .cancel,handler: { [weak self] _ in
- guard let field1 = alert.textFields?[0],let field2 = alert.textFields?[1],
- let field3 = alert.textFields?[2], let field4 = alert.textFields?[3],
- let field5 = alert.textFields?[4],let field6 = alert.textFields?[5],let field7 = alert.textFields?[6],
- let organizerNametxt = field1.text, let eventNametxt = field2.text,
- let participantLimit = field3.text,
- let eventTime = field4.text, let eventVenue = field5.text, let EventDescription = field6.text, let EventTag = field7.text , !eventNametxt.isEmpty else{
- return
- 
- }
- 
- 
- self?.createEvent(orgnizerName: organizerNametxt, eventName: eventNametxt, participantsLimit: participantLimit, eventTime: eventTime, eventVenue: eventVenue, eventDescription: EventDescription, eventTag: EventTag)
- 
- }))
- 
- self.present(alert,animated: true)
- }
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
  
  //CoreData Logic
  

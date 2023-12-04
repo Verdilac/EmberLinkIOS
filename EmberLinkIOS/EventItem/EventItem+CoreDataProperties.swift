@@ -20,7 +20,8 @@ extension EventItem {
     @NSManaged public var eventName: String?
     @NSManaged public var participantsLimit: String?
     @NSManaged public var eventTime: Date?
-    @NSManaged public var eventVenue: String?
+    @NSManaged public var eventVenueLongitude: String?
+    @NSManaged public var eventVenueLatitude: String?
     @NSManaged public var eventDescription: String?
     @NSManaged public var eventTag: String?
     @NSManaged public var participants: String?

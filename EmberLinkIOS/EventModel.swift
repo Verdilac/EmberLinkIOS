@@ -19,7 +19,8 @@ class EventModel {
         eventName:String,
         participantsLimit:String,
         eventTime:Date,
-        eventVenue:String,
+        eventVenueLongitude:String,
+        eventVenueLatitude:String,
         eventDescription:String,
         eventTag:String) -> Bool {
             
@@ -28,7 +29,8 @@ class EventModel {
             newEvent.eventName = eventName
             newEvent.participantsLimit = participantsLimit
             newEvent.eventTime = eventTime
-            newEvent.eventVenue = eventVenue
+            newEvent.eventVenueLongitude = eventVenueLongitude
+            newEvent.eventVenueLatitude = eventVenueLatitude
             newEvent.eventDescription = eventDescription
             newEvent.eventTag = eventTag
             newEvent.participants = organizerName

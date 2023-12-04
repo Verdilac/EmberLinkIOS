@@ -24,8 +24,9 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var EventTime: UILabel!
     
     
-    @IBOutlet weak var EventVenue: UILabel!
+    @IBOutlet weak var EventVenueLongitude: UILabel!
     
+    @IBOutlet weak var EventVenueLatitude: UILabel!
     
     @IBOutlet weak var EventDescription: UILabel!
     
@@ -54,7 +55,7 @@ class EventDetailsViewController: UIViewController {
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventName}
         alert.addTextField{TextField in TextField.placeholder = self.item?.participantsLimit}
         // alert.addTextField{TextField in TextField.placeholder = self.item?.eventTime}
-        alert.addTextField{TextField in TextField.placeholder = self.item?.eventVenue}
+        // alert.addTextField{TextField in TextField.placeholder = self.item?.eventVenue}
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventDescription}
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventTag}
         
@@ -64,13 +65,17 @@ class EventDetailsViewController: UIViewController {
                   let field5 = alert.textFields?[4],let field6 = alert.textFields?[5],let field7 = alert.textFields?[6],
                   let newOrganizerNametxt = field1.text, let newEventNametxt = field2.text,
                   let newParticipantLimit = field3.text,
-                  let newEventTime = field4.text, let newEventVenue = field5.text, let newEventDescription = field6.text, let newEventTag = field7.text  else{
+                  let newEventTime = field4.text,
+                  // let newEventVenue = field5.text,
+                  let newEventDescription = field6.text, let newEventTag = field7.text  else{
                 
                 return
             }
             
             if let eventItem = self?.item {
-                self?.EditCheck(event: eventItem, newEventOrganizer: newOrganizerNametxt, newEventName: newEventNametxt, newParticipantsLimit: newParticipantLimit, newEventTime: newEventTime, newEventVenue: newEventVenue, newEventDescription: newEventDescription, newEventTag: newEventTag)
+                self?.EditCheck(event: eventItem, newEventOrganizer: newOrganizerNametxt, newEventName: newEventNametxt, newParticipantsLimit: newParticipantLimit, newEventTime: newEventTime, 
+                                // newEventVenue: newEventVenue,
+                                newEventDescription: newEventDescription, newEventTag: newEventTag)
             } else {
                 print("Error deleting event: possible event nill")
 
@@ -152,18 +157,7 @@ class EventDetailsViewController: UIViewController {
             }
         }
         
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
     
     func deleteEvent(event:EventItem){
         context.delete(event)
@@ -175,9 +169,9 @@ class EventDetailsViewController: UIViewController {
         }
     }
     
-    
-    
-    func EditCheck(event:EventItem,newEventOrganizer:String,newEventName:String ,newParticipantsLimit:String,newEventTime:String,newEventVenue:String,newEventDescription:String,newEventTag:String){
+    func EditCheck(event:EventItem,newEventOrganizer:String,newEventName:String ,newParticipantsLimit:String,newEventTime:String,
+                   // newEventVenue:String,
+                   newEventDescription:String,newEventTag:String){
         
         if !newEventOrganizer.isEmpty {
                 event.eventOrganizer = newEventOrganizer
@@ -195,9 +189,9 @@ class EventDetailsViewController: UIViewController {
                 // event.eventTime = newEventTime
             }
 
-            if !newEventVenue.isEmpty {
-                event.eventVenue = newEventVenue
-            }
+            //if !newEventVenue.isEmpty {
+                //event.eventVenue = newEventVenue
+            //}
 
             if !newEventDescription.isEmpty {
                 event.eventDescription = newEventDescription
@@ -218,7 +212,9 @@ class EventDetailsViewController: UIViewController {
     
     
     
-    func updateItem(event:EventItem,newEventOrganizer:String,newEventName:String ,newParticipantsLimit:String,newEventTime:String,newEventVenue:String,newEventDescription:String,newEventTag:String){
+    func updateItem(event:EventItem,newEventOrganizer:String,newEventName:String ,newParticipantsLimit:String,newEventTime:String,
+                    // newEventVenue:String,
+                    newEventDescription:String,newEventTag:String){
         
         
         event.eventOrganizer = newEventOrganizer
@@ -226,7 +222,7 @@ class EventDetailsViewController: UIViewController {
         event.participantsLimit = newParticipantsLimit
         // event.eventTime = newEventTime
         event.eventDescription = newEventDescription
-        event.eventVenue = newEventVenue
+        //event.eventVenue = newEventVenue
         event.eventTag = newEventTag
         
         do{
@@ -257,10 +253,6 @@ class EventDetailsViewController: UIViewController {
             
     }
     
-    
-    
-    
-    
     func displayItemDetails() {
             // Check if item is not nil and update UI with its attributes
             if let selectedItem = item {
@@ -268,7 +260,7 @@ class EventDetailsViewController: UIViewController {
                 EventName.text = "EventName: " + (selectedItem.eventName ??  "")
                 ParticipantLimit.text = "Participant Limit: " + (selectedItem.participantsLimit ??  "")
                 // EventTime.text = "Time: " + (selectedItem.eventTime ??  "")
-                EventVenue.text = "Venue: " + (selectedItem.eventVenue ??  "")
+                // EventVenue.text = "Venue: " + (selectedItem.eventVenue ??  "")
                 EventDescription.text = "Description: " + (selectedItem.eventDescription ??  "")
                 EventTag.text = "Tag: " + (selectedItem.eventTag ??  "")
                 Participants.text = "Participants: " + (selectedItem.participants ??  "")
