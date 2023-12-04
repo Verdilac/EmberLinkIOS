@@ -16,6 +16,7 @@
 		486BD1872B18211100650FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486BD1852B18211100650FF8 /* LaunchScreen.storyboard */; };
 		486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */; };
 		486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */; };
+		E323464B2B1D6FBF00C968B4 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E323464A2B1D6FBF00C968B4 /* EventModel.swift */; };
 		E3245AC22B1C0C2D0017C8F3 /* EventListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3245AC12B1C0C2D0017C8F3 /* EventListingTableViewController.swift */; };
 		E3245AC42B1C0D190017C8F3 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3245AC32B1C0D190017C8F3 /* CreateEventViewController.swift */; };
 		E3245ACA2B1C1C780017C8F3 /* EventListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3245AC92B1C1C780017C8F3 /* EventListingTableViewCell.swift */; };
@@ -33,6 +34,7 @@
 		486BD1882B18211100650FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E323464A2B1D6FBF00C968B4 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E3245AC12B1C0C2D0017C8F3 /* EventListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingTableViewController.swift; sourceTree = "<group>"; };
 		E3245AC32B1C0D190017C8F3 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		E3245AC92B1C1C780017C8F3 /* EventListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				E3245AC12B1C0C2D0017C8F3 /* EventListingTableViewController.swift */,
 				E3245AC32B1C0D190017C8F3 /* CreateEventViewController.swift */,
 				E3245AC92B1C1C780017C8F3 /* EventListingTableViewCell.swift */,
+				E323464A2B1D6FBF00C968B4 /* EventModel.swift */,
 			);
 			path = EmberLinkIOS;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				E3245ACA2B1C1C780017C8F3 /* EventListingTableViewCell.swift in Sources */,
 				486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */,
 				486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */,
+				E323464B2B1D6FBF00C968B4 /* EventModel.swift in Sources */,
 				E3245AC42B1C0D190017C8F3 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

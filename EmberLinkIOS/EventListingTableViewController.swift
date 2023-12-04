@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EventListingTableViewController: UITableViewController {
 
@@ -20,7 +21,9 @@ class EventListingTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var eventModel = EventModel();
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -39,7 +42,17 @@ class EventListingTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    
+    public func getAllEvents() {
+        var success = eventModel.getAllEvents(context: context);
+        
+        if(success) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -93,70 +106,6 @@ class EventListingTableViewController: UITableViewController {
  }
  
  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- 
- 
- 
- 
- //        let modelIndex = indexPath.row / 7 // Index of the current EventItem
- //           let attributeIndex = indexPath.row % 7 // Index of the current attribute
- //
- //           let model = models[modelIndex]
- //
- //           var attributes: [(name: String, value: String?)] = [
- //               ("Event Name", model.eventName),
- //               ("eventOrganizer", model.eventOrganizer),
- //               ("EventParticipantLimit ", model.participantsLimit),
- //               ("EventTime", model.eventTime),
- //               ("EventVenue", model.eventVenue),
- //               ("EventDescription", model.eventDescription),
- //               ("EventTag", model.eventTag)
- //           ]
- //
- //           let attribute = attributes[attributeIndex]
- //
- //           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
- //           cell.textLabel?.text = "\(attribute.name): \(attribute.value ?? "")"
- //
- //           return cell
- 
- //        let modelIndex = indexPath.row / 7 // Index of the current EventItem
- //            let attributeIndex = indexPath.row % 7 // Index of the current attribute
- //
- //            let model = models[modelIndex]
- //
- //            var attributeText: String = ""
- //
- //            switch attributeIndex {
- //            case 0:
- //                attributeText = model.eventName ?? ""
- //            case 1:
- //                attributeText = model.eventOrganizer ?? ""
- //            case 2:
- //                attributeText = model.eventTime ?? ""
- //            case 3:
- //                attributeText = model.participantsLimit ?? ""
- //            case 4:
- //                attributeText = model.eventVenue ?? ""
- //            case 5:
- //                attributeText = model.eventDescription ?? ""
- //            case 6:
- //                attributeText = model.eventTag ?? ""
- //            default:
- //                break
- //            }
- //
- //            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
- //            cell.textLabel?.text = "Attribute \(attributeIndex + 1): \(attributeText)"
- //
- //            return cell
- 
- 
- 
- 
- 
- 
- 
- 
  let model = models[indexPath.row]
  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
  
@@ -232,29 +181,7 @@ class EventListingTableViewController: UITableViewController {
  }
  
  
- func createEvent(orgnizerName:String ,eventName:String ,participantsLimit:String,eventTime:String,eventVenue:String,eventDescription:String,eventTag:String ){
  
- let newEvent = EventItem(context: context)
- newEvent.eventOrganizer = orgnizerName
- newEvent.eventName = eventName
- newEvent.participantsLimit = participantsLimit
- newEvent.eventTime = eventTime
- newEvent.eventVenue = eventVenue
- newEvent.eventDescription = eventDescription
- newEvent.eventTag = eventTag
- newEvent.participants = orgnizerName
- newEvent.currentParticipantCount = 0
- 
- 
- do{
- try context.save()
- getAllEvents()
- }
- catch{
- 
- }
- 
- }
  
  @objc private func didTapAdd()
  {

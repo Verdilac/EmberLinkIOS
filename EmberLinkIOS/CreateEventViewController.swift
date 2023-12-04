@@ -8,7 +8,22 @@
 import UIKit
 
 class CreateEventViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var eventTime: UIDatePicker!
+    @IBOutlet weak var eventOrganizer: UITextField!
+    @IBOutlet weak var participantsLimit: UITextField!
+    @IBOutlet weak var eventName: UITextField!
+    @IBOutlet weak var eventDescription: UITextField!
+    @IBOutlet weak var eventTag: UITextField!
+    @IBOutlet weak var eventVenueLatitude: UITextField!
+    @IBOutlet weak var eventVenueLongitude: UITextField!
+    
+    // MARK: - Context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var eventModel = EventModel();
+    var eventListingController = EventListingTableViewController();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +31,23 @@ class CreateEventViewController: UIViewController {
     }
     
 
+    @IBAction func submitButton(_ sender: UIButton) {
+        var didCreateEvent = eventModel.createEvent(
+            context: context,
+            organizerName: eventOrganizer.text ?? "",
+            eventName: eventName.text ?? "",
+            participantsLimit: participantsLimit.text ?? "",
+            eventTime: eventTime.date,
+            eventVenue: eventVenueLatitude.text ?? "",
+            eventDescription: eventDescription.text ?? "",
+            eventTag: eventTag.text ?? ""
+        );
+        
+        if(didCreateEvent) {
+            eventListingController.getAllEvents();
+            navigationController?.popViewController(animated: true);
+        }
+    }
     /*
     // MARK: - Navigation
 

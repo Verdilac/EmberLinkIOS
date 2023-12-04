@@ -19,7 +19,7 @@ extension EventItem {
     @NSManaged public var eventOrganizer: String?
     @NSManaged public var eventName: String?
     @NSManaged public var participantsLimit: String?
-    @NSManaged public var eventTime: String?
+    @NSManaged public var eventTime: Date?
     @NSManaged public var eventVenue: String?
     @NSManaged public var eventDescription: String?
     @NSManaged public var eventTag: String?

@@ -53,7 +53,7 @@ class EventDetailsViewController: UIViewController {
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventOrganizer}
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventName}
         alert.addTextField{TextField in TextField.placeholder = self.item?.participantsLimit}
-        alert.addTextField{TextField in TextField.placeholder = self.item?.eventTime}
+        // alert.addTextField{TextField in TextField.placeholder = self.item?.eventTime}
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventVenue}
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventDescription}
         alert.addTextField{TextField in TextField.placeholder = self.item?.eventTag}
@@ -192,7 +192,7 @@ class EventDetailsViewController: UIViewController {
             }
 
             if !newEventTime.isEmpty {
-                event.eventTime = newEventTime
+                // event.eventTime = newEventTime
             }
 
             if !newEventVenue.isEmpty {
@@ -224,7 +224,7 @@ class EventDetailsViewController: UIViewController {
         event.eventOrganizer = newEventOrganizer
         event.eventName = newEventName
         event.participantsLimit = newParticipantsLimit
-        event.eventTime = newEventTime
+        // event.eventTime = newEventTime
         event.eventDescription = newEventDescription
         event.eventVenue = newEventVenue
         event.eventTag = newEventTag
@@ -267,7 +267,7 @@ class EventDetailsViewController: UIViewController {
                 EventOrganizerName.text = "Organizer: " + (selectedItem.eventOrganizer ?? "")
                 EventName.text = "EventName: " + (selectedItem.eventName ??  "")
                 ParticipantLimit.text = "Participant Limit: " + (selectedItem.participantsLimit ??  "")
-                EventTime.text = "Time: " + (selectedItem.eventTime ??  "")
+                // EventTime.text = "Time: " + (selectedItem.eventTime ??  "")
                 EventVenue.text = "Venue: " + (selectedItem.eventVenue ??  "")
                 EventDescription.text = "Description: " + (selectedItem.eventDescription ??  "")
                 EventTag.text = "Tag: " + (selectedItem.eventTag ??  "")
