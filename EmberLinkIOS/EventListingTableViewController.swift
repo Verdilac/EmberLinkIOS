@@ -13,9 +13,6 @@ class EventListingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllEvents()
-        //tableView.delegate = self
-        //tableView.dataSource = self
-        //tableView.frame = view.bounds
     }
     
     override func viewWillAppear(_ animated: Bool) {
