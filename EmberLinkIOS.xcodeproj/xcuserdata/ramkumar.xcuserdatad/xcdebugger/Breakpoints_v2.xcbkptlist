@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9BCB70DD-055F-4568-849A-1B860BC8E2A9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmberLinkIOS/EventDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "EventDetailsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11 - 7a21636ddb5ad365"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.EventName.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11 - 4bba12c9ae74b699"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.EventName.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11 - 748bf0c137d8a90a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.EventName.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11 - 2614856247a7e9df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.EventName.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11 - 63a7aaf6090ff214"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EmberLinkIOS.EventDetailsViewController"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "AE21F553-31F0-48CE-9A55-ADB3625FED11 - 88986c725206bccd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EmberLinkIOS.EventDetailsViewController&gt;"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92DA9CA1-B671-48B6-954B-E56FA8121D61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmberLinkIOS/EventDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "EventDetailsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "92DA9CA1-B671-48B6-954B-E56FA8121D61 - 63a7aaf6090ff214"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EmberLinkIOS.EventDetailsViewController"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "92DA9CA1-B671-48B6-954B-E56FA8121D61 - 88986c725206bccd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmberLinkIOS.EventDetailsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EmberLinkIOS.EventDetailsViewController&gt;"
+                  moduleName = "EmberLinkIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramkumar/Desktop/Georgian%20College/Courses/MDEV1006-23F%20Intro%20to%20iOS%20Development%20/Final%20Project/EmberLinkIOS/EmberLinkIOS/EventDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
