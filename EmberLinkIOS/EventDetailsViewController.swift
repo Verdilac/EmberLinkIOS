@@ -264,16 +264,18 @@ class EventDetailsViewController: UIViewController {
     func displayItemDetails() {
             // Check if item is not nil and update UI with its attributes
             if let selectedItem = item {
-                EventOrganizerName.text = "Organizer: " + (selectedItem.eventOrganizer ?? "")
-                EventName.text = "EventName: " + (selectedItem.eventName ??  "")
-                ParticipantLimit.text = "Participant Limit: " + (selectedItem.participantsLimit ??  "")
-                EventTime.text = "Time: " + (selectedItem.eventTime ??  "")
-                EventVenue.text = "Venue: " + (selectedItem.eventVenue ??  "")
-                EventDescription.text = "Description: " + (selectedItem.eventDescription ??  "")
-                EventTag.text = "Tag: " + (selectedItem.eventTag ??  "")
-                Participants.text = "Participants: " + (selectedItem.participants ??  "")
+                EventOrganizerName.text = selectedItem.eventOrganizer ?? ""
+                EventName.text = selectedItem.eventName ?? ""
+                ParticipantLimit.text = selectedItem.participantsLimit ?? ""
+                EventTime.text = selectedItem.eventTime ??  ""
+                EventVenue.text = selectedItem.eventVenue ??  ""
+                EventDescription.text = selectedItem.eventDescription ??  ""
+                EventTag.text = selectedItem.eventTag ??  ""
+                Participants.text = selectedItem.participants ??  ""
                 
             }
+        
+        EventDescription.sizeToFit()
         }
     
 
