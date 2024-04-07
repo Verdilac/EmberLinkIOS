@@ -129,6 +129,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.frame = view.bounds
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add , target: self, action: #selector(didTapAdd))
+
+        // Start the timer to trigger the notification every 5 minutes
+        scheduleEventReminderNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -267,6 +270,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         }
+
+        func scheduleEventReminderNotification() {
+        timer = Timer.scheduledTimer(withTimeInterval: 5 * 60, repeats: true) { [weak self] _ in
+            self?.getLatestEventAndSendNotification()
+        }
+        timer?.fire() // Trigger immediately upon scheduling
+    }
+    
+    func getLatestEventAndSendNotification() {
+        // Get the latest event details from CoreData or your data source
+        // Assuming you have a method to fetch the latest event
+        if let latestEvent = EventService.getLatestEvent() {
+            // Trigger notification using latest event details
+            NotificationGenerator.generateNotification(title: latestEvent.eventName, description: latestEvent.eventDescription)
+        } else {
+            // Handle scenario when no event is available
+            print("No events found")
+        }
+    }
         
     }
     
