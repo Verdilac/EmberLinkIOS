@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        UNUserNotificationCenter.current().delegate = self
+        requestNotificationAuthorization()
 
         return true
     }
@@ -80,11 +80,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {}
+// Request authorization to display notifications
+    func requestNotificationAuthorization() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        center.requestAuthorization(options: [.banner, .sound, .badge]) { granted, error in
+            if let error = error {
+                // Handle error
+                print("Error requesting authorization: \(error.localizedDescription)")
+            }
+            
+            if granted {
+                // Authorization granted
+                print("Notification authorization granted")
+            } else {
+                // Authorization denied
+                print("Notification authorization denied")
+            }
+        }
+    }
     
+    // Handle notification tap when the app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Handle notification presentation when the app is in foreground
+        // You can customize the presentation options here (e.g., sound, badge, alert)
         completionHandler([.banner, .badge, .sound])
     }
-
+    
+    // Handle notification tap when the app is in background or terminated
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Handle notification tap action
+        // You can navigate to a specific view controller or perform other actions here
+        completionHandler()
+    }
 }
 
