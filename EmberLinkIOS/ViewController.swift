@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -134,27 +135,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scheduleRepeatingNotifications()
     }
     
-// Trigger a notification for the last event
-func scheduleRepeatingNotifications() {
-    // Remove the existing notification requests
-    removePreviousNotifications()
-    
-    guard let lastEvent = models.last else {
-        return
+    // Trigger a notification for the last event
+    func scheduleRepeatingNotifications() {
+        // Remove the existing notification requests
+        removePreviousNotifications()
+        
+        guard let lastEvent = models.last else {
+            return
+        }
+        
+        // Generate and schedule notification for the latest event
+        NotificationGenerator.generateNotification(
+            title: "Event Reminder",
+            description: "Don't forget about \(lastEvent.eventName ?? "")!"
+        )
     }
-    
-    // Generate and schedule notification for the latest event
-    NotificationGenerator.generateNotification(
-        title: "Event Reminder",
-        description: "Don't forget about \(lastEvent.eventName ?? "")!"
-    )
-}
 
-// Remove previous notification requests
-func removePreviousNotifications() {
-    let notificationCenter = UNUserNotificationCenter.current()
-    notificationCenter.removeAllPendingNotificationRequests()
-}
+    // Remove previous notification requests
+    func removePreviousNotifications() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeAllPendingNotificationRequests()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
