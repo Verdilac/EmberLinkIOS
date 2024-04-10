@@ -8,14 +8,15 @@ import Foundation
 import UserNotifications
 
 class NotificationGenerator {
-    static func generateNotification(title: String, description: String) {
-        requestAuthorization()
+    static func generateRepeatingNotification(title: String, description: String) {
+        requestAuthorization() 
         
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = description
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        // Create a trigger for a repeating notification (every 5 minutes)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: true)
         
         // Create the request
         let uuidString = UUID().uuidString
@@ -33,7 +34,7 @@ class NotificationGenerator {
     static func requestAuthorization() {
         let center = UNUserNotificationCenter.current()
         
-        center.requestAuthorization(options: [.alert, .sound, .badge]) {granted, error in
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
                 // Handle the error here
                 print("Error requesting authorization \(error)")
