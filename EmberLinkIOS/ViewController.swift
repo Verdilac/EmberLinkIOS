@@ -271,7 +271,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
 
-        func scheduleEventReminderNotification() {
+    func scheduleEventReminderNotification() {
         timer = Timer.scheduledTimer(withTimeInterval: 5 * 60, repeats: true) { [weak self] _ in
             self?.getLatestEventAndSendNotification()
         }
