@@ -130,9 +130,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.frame = view.bounds
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add , target: self, action: #selector(didTapAdd))
-
-        // Start the timer to trigger the notification every 5 minutes
-        scheduleRepeatingNotifications()
     }
     
     // Trigger a notification for the last event
@@ -170,6 +167,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.tableView.reloadData()
             }
             
+            scheduleRepeatingNotifications()
         }
         catch {
             //Error
