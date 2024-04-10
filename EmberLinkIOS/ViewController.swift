@@ -131,7 +131,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add , target: self, action: #selector(didTapAdd))
 
         // Start the timer to trigger the notification every 5 minutes
-        scheduleEventReminderNotification()
+        scheduleRepeatingNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -271,26 +271,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
 
-    func scheduleEventReminderNotification() {
-        timer = Timer.scheduledTimer(withTimeInterval: 5 * 60, repeats: true) { [weak self] _ in
-            self?.getLatestEventAndSendNotification()
+       func scheduleRepeatingNotifications() {
+        guard let lastEvent = models.last else {
+            return
         }
-        timer?.fire() // Trigger immediately upon scheduling
-    }
-    
-    func getLatestEventAndSendNotification() {
-        // Get the latest event details from CoreData or your data source
-        // Assuming you have a method to fetch the latest event
-        if let latestEvent = EventService.getLatestEvent() {
-            // Trigger notification using latest event details
-            NotificationGenerator.generateNotification(title: latestEvent.eventName, description: latestEvent.eventDescription)
-        } else {
-            // Handle scenario when no event is available
-            print("No events found")
-        }
-    }
         
+        let content = UNMutableNotificationContent()
+        content.title = "Event Reminder"
+        content.body = "Don't forget about \(lastEvent.eventName ?? "")!"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: true) // 300 seconds = 5 minutes
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
-    
-    
 }
