@@ -4,11 +4,8 @@
 //
 //  Created by Loise Study on 2024-04-07.
 //
-
-
-
-
 import Foundation
+import UserNotifications
 
 class NotificationGenerator {
     static func generateNotification(title: String, description: String) {

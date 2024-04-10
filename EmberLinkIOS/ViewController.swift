@@ -134,6 +134,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scheduleRepeatingNotifications()
     }
     
+    // Trigger a notification for the last event
+    func scheduleRepeatingNotifications() {
+        guard let lastEvent = models.last else {
+            return
+        }
+        
+        NotificationGenerator.generateNotification(
+            title: "Event Reminder",
+            description: "Don't forget about \(lastEvent.eventName ?? "")!"
+        )
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             getAllEvents()
@@ -226,20 +238,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             self.present(alert,animated: true)
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
         
         //CoreData Logic
-        
-        
-        
         
         func deleteEvent(event:EventItem){
             context.delete(event)
@@ -270,19 +271,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         }
-
-       func scheduleRepeatingNotifications() {
-        guard let lastEvent = models.last else {
-            return
-        }
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Event Reminder"
-        content.body = "Don't forget about \(lastEvent.eventName ?? "")!"
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: true) // 300 seconds = 5 minutes
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }

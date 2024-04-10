@@ -18,7 +18,6 @@
 		486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */; };
 		486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */; };
 		E37CE7E92BC3543A003A3601 /* NotificationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CE7E82BC3543A003A3601 /* NotificationGenerator.swift */; };
-		E37CE7EF2BC35844003A3601 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CE7EE2BC35844003A3601 /* EventService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E37CE7E82BC3543A003A3601 /* NotificationGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationGenerator.swift; sourceTree = "<group>"; };
-		E37CE7EE2BC35844003A3601 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +77,6 @@
 				486BD1802B18211000650FF8 /* EmberLinkIOS.xcdatamodeld */,
 				482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */,
 				E37CE7E82BC3543A003A3601 /* NotificationGenerator.swift */,
-				E37CE7EE2BC35844003A3601 /* EventService.swift */,
 			);
 			path = EmberLinkIOS;
 			sourceTree = "<group>";
@@ -170,7 +167,6 @@
 				486BD1822B18211000650FF8 /* EmberLinkIOS.xcdatamodeld in Sources */,
 				E37CE7E92BC3543A003A3601 /* NotificationGenerator.swift in Sources */,
 				486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */,
-				E37CE7EF2BC35844003A3601 /* EventService.swift in Sources */,
 				486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */,
 				486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */,
 			);
