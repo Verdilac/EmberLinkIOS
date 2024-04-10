@@ -134,17 +134,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scheduleRepeatingNotifications()
     }
     
-    // Trigger a notification for the last event
-    func scheduleRepeatingNotifications() {
-        guard let lastEvent = models.last else {
-            return
-        }
-        
-        NotificationGenerator.generateNotification(
-            title: "Event Reminder",
-            description: "Don't forget about \(lastEvent.eventName ?? "")!"
-        )
+// Trigger a notification for the last event
+func scheduleRepeatingNotifications() {
+    // Remove the existing notification requests
+    removePreviousNotifications()
+    
+    guard let lastEvent = models.last else {
+        return
     }
+    
+    // Generate and schedule notification for the latest event
+    NotificationGenerator.generateNotification(
+        title: "Event Reminder",
+        description: "Don't forget about \(lastEvent.eventName ?? "")!"
+    )
+}
+
+// Remove previous notification requests
+func removePreviousNotifications() {
+    let notificationCenter = UNUserNotificationCenter.current()
+    notificationCenter.removeAllPendingNotificationRequests()
+}
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
