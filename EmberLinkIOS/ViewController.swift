@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -131,6 +132,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add , target: self, action: #selector(didTapAdd))
     }
     
+    // Trigger a notification for the last event
+    func scheduleRepeatingNotifications() {
+        // Remove the existing notification requests
+        removePreviousNotifications()
+        
+        guard let lastEvent = models.last else {
+            return
+        }
+        
+        // Generate and schedule notification for the latest event
+        NotificationGenerator.generateRepeatingNotification(
+            title: "Upcoming event",
+            description: "Hey, this is a reminder for \(lastEvent.eventName ?? "") on \(lastEvent.eventTime ?? "")"
+        )
+    }
+
+    // Remove previous notification requests
+    func removePreviousNotifications() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             getAllEvents()
@@ -144,6 +167,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.tableView.reloadData()
             }
             
+            scheduleRepeatingNotifications()
         }
         catch {
             //Error
@@ -223,20 +247,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             self.present(alert,animated: true)
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
         
         //CoreData Logic
-        
-        
-        
         
         func deleteEvent(event:EventItem){
             context.delete(event)
@@ -267,8 +280,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         }
-        
     }
-    
-    
 }
