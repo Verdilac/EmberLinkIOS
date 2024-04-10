@@ -145,9 +145,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         // Generate and schedule notification for the latest event
-        NotificationGenerator.generateNotification(
-            title: "Event Reminder",
-            description: "Don't forget about \(lastEvent.eventName ?? "")!"
+        NotificationGenerator.generateRepeatingNotification(
+            title: "Upcoming event",
+            description: "Hey, this is a reminder for \(lastEvent.eventName ?? "") on \(lastEvent.eventTime ?? "")"
         )
     }
 

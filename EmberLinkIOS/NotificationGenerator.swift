@@ -16,7 +16,7 @@ class NotificationGenerator {
         content.body = description
         
         // Create a trigger for a repeating notification (every 5 minutes)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         
         // Create the request
         let uuidString = UUID().uuidString
