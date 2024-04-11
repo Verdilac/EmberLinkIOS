@@ -27,6 +27,7 @@
 		F519D2302BC732CA00D698AF /* EventWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F519D21C2BC732C800D698AF /* EventWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F519D2352BC7343D00D698AF /* EventItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18F2B18E5E900650FF8 /* EventItem+CoreDataProperties.swift */; };
 		F519D2362BC7345000D698AF /* EventItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD18E2B18E5E900650FF8 /* EventItem+CoreDataClass.swift */; };
+		E37CE7E92BC3543A003A3601 /* NotificationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CE7E82BC3543A003A3601 /* NotificationGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		F519D2292BC732C800D698AF /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		F519D22B2BC732CA00D698AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519D22D2BC732CA00D698AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E37CE7E82BC3543A003A3601 /* NotificationGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationGenerator.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 				486BD1882B18211100650FF8 /* Info.plist */,
 				486BD1802B18211000650FF8 /* EmberLinkIOS.xcdatamodeld */,
 				482A1BC82B195BAA00C2F631 /* EventDetailsViewController.swift */,
+				E37CE7E82BC3543A003A3601 /* NotificationGenerator.swift */,
 			);
 			path = EmberLinkIOS;
 			sourceTree = "<group>";
@@ -270,6 +274,7 @@
 				482A1BC92B195BAA00C2F631 /* EventDetailsViewController.swift in Sources */,
 				486BD1902B18E5EA00650FF8 /* EventItem+CoreDataClass.swift in Sources */,
 				486BD1822B18211000650FF8 /* EmberLinkIOS.xcdatamodeld in Sources */,
+				E37CE7E92BC3543A003A3601 /* NotificationGenerator.swift in Sources */,
 				486BD1912B18E5EA00650FF8 /* EventItem+CoreDataProperties.swift in Sources */,
 				486BD1782B18211000650FF8 /* AppDelegate.swift in Sources */,
 				486BD17A2B18211000650FF8 /* SceneDelegate.swift in Sources */,
